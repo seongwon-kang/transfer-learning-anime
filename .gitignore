@@ -6,3 +6,17 @@
 .DS_Store
 .idea/
 
+*.png
+*.jpg
+*.jiff
+
+classified
+cropped/*
+honda
+raw/*
+resided
+test/*
+train/*
+validation
+*.7z
+*.npy
