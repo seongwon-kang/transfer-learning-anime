@@ -18,5 +18,6 @@ resided
 test/*
 train/*
 validation
+validation copy
 *.7z
 *.npy
