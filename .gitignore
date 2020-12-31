@@ -21,3 +21,6 @@ validation
 validation copy
 *.7z
 *.npy
+
+predict/build
+predict/dist

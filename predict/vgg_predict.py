@@ -1,20 +1,14 @@
-from tensorflow.keras.preprocessing.image import ImageDataGenerator, img_to_array, load_img
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dropout, Flatten, Dense
 from tensorflow.keras import applications
-from tensorflow.keras.utils import to_categorical
-from PIL import Image
 import numpy as np
-import math
 import cv2
 import bulk_convert
 import bulk_resize
-import tempfile
 import os
 import sys
 import shutil
 from glob import glob
-
 import tkinter as tk
 from tkinter import Tk, filedialog, messagebox, ttk
 
@@ -24,17 +18,6 @@ root = Tk()
 root.title("Million live Idol Cl@ssifier")
 root.geometry("700x100+100+100")
 root.resizable(False, False)
-
-def prepare_image (img):
-    # important! otherwise the predictions will be '0'
-    cvt_image = img / 255
-    # convert the color from BGR to RGB then convert to PIL array
-    cvt_image =  cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
-    im_pil = Image.fromarray(cvt_image)
-
-    # resize the array (image) then PIL image
-    im_resized = im_pil.resize((224, 224))
-    return im_resized
 
 def predict(filepath, dst="classified", move=False):
     # load the class_indices saved in the earlier step
